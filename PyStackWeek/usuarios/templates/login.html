@@ -1,0 +1,36 @@
+{% extends 'base.html'%}
+
+{% block 'titulo'%}
+Logar
+
+{% endblock%}
+
+{% block 'body' %}
+<div class="container">
+
+  <div class="row">
+      <div class="col-md-3">
+
+      </div>
+      <div class="col-md">
+          <br>
+          <h1>Login</h1>
+          <hr>
+          <form method="POST" action="#">
+              <label>Digite seu Email:</label>
+              <input class="form-control" type="text" placeholder="E-mail" name = "email">
+              <br>
+              <label>Digite seu senha:</label>
+              <input class="form-control" type="password" placeholder="Senha" name = "senha">
+              <br>
+              <input class="btn btn-success btn-lg" type="submit">
+              <a href="#" class="btn btn-info btn-lg">Cadastre-se</a>
+          </form>
+      </div>
+      <div class="col-md-3">
+
+      </div>
+  </div>
+
+</div>
+{% endblock %}
