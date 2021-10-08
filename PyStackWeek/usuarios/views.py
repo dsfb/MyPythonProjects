@@ -1,3 +1,6 @@
+import hashlib
+import traceback
+
 from django.http.response import Http404
 from django.shortcuts import redirect, render
 from django.http import HttpResponse
@@ -36,5 +39,6 @@ def valida_cadastro(request):
                           senha = senha)
         usuario.save()
         return redirect('/auth/cadastro/?status=0')
-    except:
+    except Exception:
+        traceback.print_exc()
         return redirect('/auth/cadastro/?status=4')
