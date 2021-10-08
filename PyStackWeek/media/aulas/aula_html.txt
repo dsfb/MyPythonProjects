@@ -1,0 +1,23 @@
+HTML é uma das linguagens que utilizamos para desenvolver websites. O acrônimo HTML vem do inglês e significa Hypertext Markup Language ou em português Linguagem de Marcação de Hipertexto.
+
+O HTML é a liguagem base da internet. Foi criada para ser de fácil entendimento por seres humanos e também por máquinas, como por exemplo o Google ou outros sistemas que percorrem a internet capturando informação.
+Quem criou o HTML?
+
+Tim Berners-Lee. Esse é o nome do homem que criou o HTML. Ele criou o HTML para a comunicação e disseminação de pesquisas entre ele e seu grupo de colegas. O HTML ficou bastante conhecido quando começou a ser utilizada para formar a rede pública daquela época, o que se tornaria mais tarde a internet que conhecemos hoje.
+O que são as tags do HTML?
+
+O HTML é uma linguagem baseada em marcação. Nós marcamos os elementos para mostrar quais informações a página exibe. Por exemplo, um título importante. Aquele título do artigo, da manchete do site, nós marcamos com uma tag/elemento chamado H1. Veja um exemplo:
+
+<h1>Aqui vai o texto do título</h1>
+
+Perceba que o texto está entre duas marcações. Essas marcações são chamadas de TAGS. As tags são abertas e depois fechadas. No exemplo acima abrimos a tag com
+e fechamos com
+. O que está dentro é o conteúdo mostrado para o usuário.
+
+O parágrafos são marcados com a tag P. Assim:
+
+<p>Aqui vai o texto do parágrafo. 
+Geralmente parágrafos tem muitas palavras, 
+letras menores que as do título</p>
+
+Utilizando as tags, nós dizemos para o navegador o que é cada informação. O que é um título, o que é um parágrafo, o que é um botão, um formulário etc. Dizemos também o que é cada coisa para os sistemas de busca, como o Google. O Google, nesse caso, para exibir os resultados de busca, ele precisa saber o que é um parágrafo e o que é um título. Ele sabe disso através das tags.

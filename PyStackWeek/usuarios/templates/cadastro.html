@@ -7,7 +7,38 @@ Cadastro
 
 {% block 'body' %}
 <div class="container">
-    
+  <br />
+
+  {% if status == '1' %}
+    <div class="alert alert-danger" role="alert">
+      E-mail já cadastrado no sistema
+    </div>
+  {% endif %}
+
+  {% if status == '2' %}
+    <div class="alert alert-danger" role="alert">
+      Nome e Email não podem ser vazios
+    </div>
+  {% endif %}
+
+  {% if status == '3' %}
+    <div class="alert alert-danger" role="alert">
+      Senha deve conter no mínimo 8 caracteres
+    </div>
+  {% endif %}
+
+  {% if status == '4' %}
+    <div class="alert alert-danger" role="alert">
+      Erro interno do sistema
+    </div>
+  {% endif %}
+
+  {% if status == '0' %}
+    <div class="alert alert-success" role="alert">
+      Cadastro confirmado com sucesso
+    </div>
+  {% endif %}
+
   <div class="row">
       <div class="col-md-3">
 
@@ -32,35 +63,7 @@ Cadastro
           </form>
       </div>
       <div class="col-md-3">
-        {% if status == '1' %}
-          <div class="alert alert-danger" role="alert">
-            E-mail já cadastrado no sistema
-          </div>
-        {% endif %}
 
-        {% if status == '2' %}
-          <div class="alert alert-danger" role="alert">
-            Nome e Email não podem ser vazios
-          </div>
-        {% endif %}
-
-        {% if status == '3' %}
-          <div class="alert alert-danger" role="alert">
-            Senha deve conter no mínimo 8 caracteres
-          </div>
-        {% endif %}
-
-        {% if status == '4' %}
-          <div class="alert alert-danger" role="alert">
-            Erro interno do sistema
-          </div>
-        {% endif %}
-
-        {% if status == '0' %}
-          <div class="alert alert-success" role="alert">
-            Cadastro confirmado com sucesso
-          </div>
-        {% endif %}
       </div>
   </div>
 

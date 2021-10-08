@@ -1,0 +1,54 @@
+
+Manipulando arquivos de texto em Python
+Aprenda a manipular (ler, escrever, adicionar, etc..) arquivos de texto na linguagem Python
+
+Se você está com pressa e quer ler receitas rápidas sugiro o artigo Receitas para manipular arquivos de texto em Python.
+
+Caso contrário…
+
+Podemos abrir um arquivo de duas maneiras: para somente leitura ('r') ou com permissão de escrita ('w').
+
+#
+# leitura
+#
+f = open('nome-do-arquivo', 'r')
+
+#
+# escrita
+#
+f = open('nome-do-arquivo', 'w')
+
+Ambos os modos retornam o objeto do arquivo.
+
+>>> arquivo = open('nome-do-arquivo', 'r')
+>>> arquivo
+<_io.TextIOWrapper name='nome-do-arquivo.text' mode='r' encoding='UTF-8'>
+
+>>> arquivo = open('nome-do-arquivo', 'w')
+>>> arquivo
+<_io.TextIOWrapper name='nome-do-arquivo.text' mode='w' encoding='UTF-8'>
+
+Se não especificarmos o segundo parâmetro, a forma padrão leitura (‘r’) será utilizada.
+
+>>> arquivo = open('nome-do-arquivo')
+>>> arquivo
+<_io.TextIOWrapper name='nome-do-arquivo.text' mode='r' encoding='UTF-8'>
+
+O terceiro parâmetro é opcional e nele especificamos a codificação do arquivo.
+
+arquivo = open(nome-do-arquivo, 'r', encoding="utf8")
+
+Se tentarmos abrir um arquivo para leitura que não existe, um erro será lançado.
+
+>>> f = open('nome-errado.text', 'r')
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+FileNotFoundError: [Errno 2] No such file or directory: 'nome-errado.text'
+
+Se tentarmos abrir um arquivo para escrita que não existe, então ele será criado, porém, se ele já existir, todo seu conteúdo será apagado no momento em que abrimos o arquivo.
+
+Devemos sempre fechar o arquivo aberto.
+
+...
+arquiv.close()
+

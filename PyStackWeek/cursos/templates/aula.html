@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block 'titulo' %}
+Aula
+
+{% endblock%}
+
+{% block 'body' %}
+
+    
+   
+
+<div class="container">
+  <br>
+ 
+  <h1>{{aula.nome}}</h1>
+  <hr>
+  <video  width="100%" controls>
+      <source src="{{aula.aula.url}}" type="video/mp4">
+    </video>
+  <hr>
+
+  <h1>Faça seu comentário: </h1>
+  <input id="comentario" type="text" placeholder="Comentário..." class="form-control">
+  <br>
+  <input onclick="#" type="button" value="Enviar" class="btn btn-success btn-lg">
+  <hr>
+ 
+ 
+
+</div>
+{% endblock %}
