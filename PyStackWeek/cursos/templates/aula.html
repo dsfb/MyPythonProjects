@@ -1,18 +1,19 @@
-{% extends 'base.html' %}
+{% extends 'base.html'%}
 
-{% block 'titulo' %}
+{% block 'titulo'%}
 Aula
 
 {% endblock%}
 
 {% block 'body' %}
 
-    
-   
+
 
 <div class="container">
   <br>
- 
+
+
+  <br>
   <h1>{{aula.nome}}</h1>
   <hr>
   <video  width="100%" controls>
@@ -23,10 +24,53 @@ Aula
   <h1>Faça seu comentário: </h1>
   <input id="comentario" type="text" placeholder="Comentário..." class="form-control">
   <br>
-  <input onclick="#" type="button" value="Enviar" class="btn btn-success btn-lg">
+  <input onclick="envia_comentario()" type="button" value="Enviar" class="btn btn-success btn-lg">
   <hr>
+  <div id="comentarios">
+    {% for i in comentarios%}
+      <div style="background-color: red; width: 30px; height: 30px; border-radius: 15px; display: inline-block;"></div>
+      <h5 style="display: inline;">{{i.usuario}}</h5>
+      <p style="margin-left: 50px;">{{i.comentario}}</p>
+      <hr>
+    {% endfor %}
+  </div>
  
  
 
 </div>
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<script>
+function envia_comentario(){
+   comentario = document.getElementById('comentario').value
+   document.getElementById('comentario').value = ""
+   $.ajax({
+            url: "{% url 'comentarios'%}",
+            method: 'post',
+            data: {
+                'csrfmiddlewaretoken': '{{ csrf_token }}',
+                'aula_id': "{{aula.id}}",
+                'usuario_id': "{{usuario_id}}",
+                'comentario': comentario
+            },
+            success: function(resposta){
+              resposta = JSON.parse(resposta)
+              if(resposta['status'] == "1"){
+                div_comentario = document.getElementById('comentarios')
+                div_comentario.innerHTML = ""
+                for(i=0; i < resposta['comentarios'].length; i++){
+                  console.log('teste')
+                  div_comentario.innerHTML += '<div style="background-color: red; width: 30px; height: 30px; border-radius: 15px; display: inline-block;"></div>'
+                  div_comentario.innerHTML += '<h5 style="display: inline;">'+ resposta['comentarios'][i][0] +'</h5>'
+                  div_comentario.innerHTML += '<p style="margin-left: 50px;">' + resposta['comentarios'][i][1] + '</p>'
+                  div_comentario.innerHTML += '<hr>'
+
+
+                }
+              }
+
+            }
+
+        })
+}
+</script>
 {% endblock %}
