@@ -1,0 +1,31 @@
+
+ Tirar Dúvida
+Anotações
+Favoritar
+Concluído
+44 Gostei
+
+44
+
+Artigos
+Canal Mais
+Python Tutorial
+
+Python é uma linguagem de programação multiplataforma que permite desenvolver aplicações para games, desktops, web e dispositivos móveis. Além disso, ela pode se comunicar com outras aplicações que foram desenvolvidas em outras linguagens como C, C++, Java e C#. Nesse artigo serão vistos exemplos diversos de sintaxes básicas utilizando o Python.
+
+Conceito de Variável em Python
+
+O conceito de variável em Python é representado sempre por um objeto (tudo é objeto), e toda variável é uma referência. Na maioria das linguagens de programação, quando iniciamos uma variável e atribuímos um valor a ela, essas carregam valores que são alocados em memória, e quando alteramos os seus valores, estamos alterando o valor na memória também. Porém, no Python as variáveis armazenam endereços de memória e não os valores.
+
+Outro ponto a considerar é que em Python uma variável não tem um tipo fixo, mas sim apenas o tipo do conteúdo, como mostra o exemplo da Listagem 1.
+
+1 x = [1,2,3]
+2 y = x
+3 x.append(4)
+4 print(y)
+
+Listagem 1. Saída gerada: [1, 2, 3, 4]
+
+Na linha 1 é criada uma variável x que recebeu um vetor de inteiros. Em seguida, foi referenciada uma variável y onde é atribuída a referência de x. Na linha 3 observamos que x também é um objeto quando invocamos o método append, que adiciona um elemento ao vetor x. Na linha 4 utilizamos o método print() para exibir a variável y. Em Python, uma variável não tem um tipo fixo, apenas o tipo do conteúdo atual, por isso o vetor se atualizou e assim o valor de y.
+
+Em relação ao nome que podemos atribuir as variáveis, pode-se utilizar letras, o caractere de sublinhado _ e números. Os comentários em Python são representados pelo símbolo # e colocado em cada linha.

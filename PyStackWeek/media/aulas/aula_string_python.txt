@@ -1,0 +1,2 @@
+As strings em Python são instruções nativas (built-ins) para armazenar texto.
+Como são imutáveis, não é possível adicionar, remover ou mesmo modificar algum caractere de uma string. Para realizar essas operações, o Python precisa criar um nova string.

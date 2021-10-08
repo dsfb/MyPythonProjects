@@ -1,6 +1,8 @@
+import json
+
 from django.shortcuts import redirect, render
 from django.http import HttpResponse
-from .models import Aulas, Cursos
+from .models import Aulas, Comentarios, Cursos, NotasAulas
 
 
 def home(request):
@@ -22,10 +24,10 @@ def curso(request, id):
 def aula(request, id):
     if request.session.get('usuario'):
         aula = Aulas.objects.get(id = id)
-        usuario_id = request.session['usuario']
+        usuario_id = request.session.get('usuario')
         comentarios = Comentarios.objects.filter(aula = aula).order_by('-data')
 
-        request_usuario = request.session.get('usuario')
+        request_usuario = usuario_id
         usuario_avaliou = NotasAulas.objects.filter(aula_id = id).filter(usuario_id = request_usuario)
         avaliacoes = NotasAulas.objects.filter(aula_id = id)
 
