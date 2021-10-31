@@ -8,7 +8,7 @@ Type "help", "copyright", "credits" or "license()" for more information.
 	print(f'{n} x {iterador} = {n * iterador}')
 	iterador += 1
 
-	
+
 4 x 0 = 0
 4 x 1 = 4
 4 x 2 = 8
@@ -24,7 +24,7 @@ Type "help", "copyright", "credits" or "license()" for more information.
 >>> if n < 0 or n > 10:
 	print('Digite de novo!')
 
-	
+
 Digite de novo!
 >>> n = 4
 >>> if n < 0 or n > 10:
@@ -32,7 +32,7 @@ Digite de novo!
 else:
 	print('Ok!')
 
-	
+
 Ok!
 >>> n = -1
 >>> if n < 0 or n > 10:
@@ -40,7 +40,7 @@ Ok!
 else:
 	print('Ok!')
 
-	
+
 Digite de novo!
 >>> n = 12
 >>> if n < 0 or n > 10:
@@ -48,7 +48,7 @@ Digite de novo!
 else:
 	print('Ok!')
 
-	
+
 Digite de novo!
 >>> n = 7
 >>> if n < 0 or n > 10:
@@ -56,10 +56,10 @@ Digite de novo!
 else:
 	print('Ok!')
 
-	
+
 Ok!
->>> usuario = 'daniel'
->>> senha = 'octaplusDoAndreOliveira'
+>>> usuario = 'danilo'
+>>> senha = 'estrelaDalva'
 >>> while True:
 	user = input('Digite usuario: ')
 	password = input('Digite senha: ')
@@ -68,17 +68,17 @@ Ok!
 	print('Login inválido! Tente novamente!')
 
 	
-Digite usuario: ana
+Digite usuario: sara
 Digite senha: aba
 Login inválido! Tente novamente!
-Digite usuario: daniel
+Digite usuario: danilo
 Digite senha: aba
 Login inválido! Tente novamente!
-Digite usuario: ana
-Digite senha: octaplusDoAndreOliveira
+Digite usuario: sara
+Digite senha: estrelaDalva
 Login inválido! Tente novamente!
-Digite usuario: daniel
-Digite senha: octaplusDoAndreOliveira
+Digite usuario: danilo
+Digite senha: estrelaDalva
 Login feito com sucesso!
 Login inválido! Tente novamente!
 Digite usuario: 
@@ -110,10 +110,10 @@ KeyboardInterrupt
 	print('Login inválido! Tente novamente!')
 
 	
-Digite usuario: ana
+Digite usuario: sara
 Digite senha: abv
 Login inválido! Tente novamente!
-Digite usuario: daniel
-Digite senha: octaplusDoAndreOliveira
+Digite usuario: danilo
+Digite senha: estrelaDalva
 Login feito com sucesso!
 >>> 

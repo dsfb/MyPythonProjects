@@ -17,27 +17,27 @@ Digite a idade: 34
 Digite a altura: 163
 Digite 1 para cadastrar uma pessoa e 2 para sair: 2
 [{'nome': 'Caio', 'idade': '21', 'altura': '172'}, {'nome': 'Marcos', 'idade': '22', 'altura': '175'}, {'nome': 'Pedro', 'idade': '34', 'altura': '163'}]
->>> pessoa = {'nome': 'daniel', 'idade': 34}
+>>> pessoa = {'nome': 'danilo', 'idade': 34}
 >>> pessoa
-{'nome': 'daniel', 'idade': 34}
->>> pessoa.update({'nome': 'Daniel Bruno', 'idade': 35})
+{'nome': 'danilo', 'idade': 34}
+>>> pessoa.update({'nome': 'Danilo Barbosa', 'idade': 35})
 >>> pessoa
-{'nome': 'Daniel Bruno', 'idade': 35}
+{'nome': 'Danilo Barbosa', 'idade': 35}
 >>> pessoa
-{'nome': 'Daniel Bruno', 'idade': 35}
+{'nome': 'Danilo Barbosa', 'idade': 35}
 >>> pessoa.keys()
 dict_keys(['nome', 'idade'])
 >>> pessoa.values()
-dict_values(['Daniel Bruno', 35])
+dict_values(['Danilo Barbosa', 35])
 >>> pessoa.items()
-dict_items([('nome', 'Daniel Bruno'), ('idade', 35)])
+dict_items([('nome', 'Danilo Barbosa'), ('idade', 35)])
 >>> pessoa
-{'nome': 'Daniel Bruno', 'idade': 35}
+{'nome': 'Danilo Barbosa', 'idade': 35}
 >>> list(pessoa.items())
-[('nome', 'Daniel Bruno'), ('idade', 35)]
+[('nome', 'Danilo Barbosa'), ('idade', 35)]
 >>> x = _
 >>> x
-[('nome', 'Daniel Bruno'), ('idade', 35)]
+[('nome', 'Danilo Barbosa'), ('idade', 35)]
 >>> type(x[0])
 <class 'tuple'>
 >>> type(pessoa.keys())
@@ -52,7 +52,7 @@ dict_items([('nome', 'Daniel Bruno'), ('idade', 35)])
 	print(f'key: {key}, e value: {value}')
 
 	
-key: nome, e value: Daniel Bruno
+key: nome, e value: Danilo Barbosa
 key: idade, e value: 35
 >>> or key, value in pessoa.items():
 	print(f'key: "{key}", e value: "{value}"')
@@ -62,13 +62,13 @@ SyntaxError: invalid syntax
 	print(f'key: "{key}", e value: "{value}"')
 
 	
-key: "nome", e value: "Daniel Bruno"
+key: "nome", e value: "Danilo Barbosa"
 key: "idade", e value: "35"
 >>> for key, value in pessoa.items():
 	print(f'key: "{key}", e value: "{value}";')
 
 	
-key: "nome", e value: "Daniel Bruno";
+key: "nome", e value: "Danilo Barbosa";
 key: "idade", e value: "35";
 >>> x = [1, 1, 1, 2, 2, 3, 3, 3, 3, 4, 5]
 >>> y = set(x)
