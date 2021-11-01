@@ -31,7 +31,6 @@ def dobro(lista):
     lista_dobro = []
     for i in lista:
         lista_dobro.append(i * 2)
-
     return lista_dobro
 
 x = asizesof(dobro(range(0, 100)))
