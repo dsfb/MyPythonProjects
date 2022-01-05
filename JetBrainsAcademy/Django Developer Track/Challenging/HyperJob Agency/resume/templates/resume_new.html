@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>New resume</title>
+    <style>
+        body {
+            background: #46a9db;
+        }
+
+        .content {
+            max-width: 640px;
+            margin: auto;
+        }
+
+        .h_titles {
+            margin-left: 8.25em;
+            color: #400080;
+            text-decoration: underline;
+        }
+
+        .form_divs {
+            margin-left: 164px;
+            border-radius: 25px;
+            border: 2px solid #73AD21;
+            padding: 24px;
+            width: 324px;
+            height: 68px;
+        }
+
+        .form_btn {
+            margin-top: 1em;
+            margin-left: 6em;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <br>
+    <div class="content">
+        <h2 class="h_titles">Create a new Resume:</h2>
+        <br>
+        <div class="form_divs">
+            <form method="post" action="new">
+                {% csrf_token %}
+              <table>{{ form.as_table }}</table>
+              <button class="form_btn" type="submit">Create resume</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

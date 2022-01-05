@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign Up</title>
+    <style>
+        body {
+            background: #46a9db;
+        }
+
+        .content {
+            max-width: 1260px;
+            margin: auto;
+        }
+
+        .h_titles {
+            margin-left: 436px;
+            color: #400080;
+            text-decoration: underline;
+        }
+
+        .form_divs {
+            margin-left: 214px;
+            border-radius: 25px;
+            border: 2px solid #73AD21;
+            padding: 24px;
+            width: max-content;
+            height: max-content;
+        }
+
+        .form_btn {
+            margin-top: 24px;
+            margin-left: 364px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <br>
+    <div class="content">
+        <h2 class="h_titles">Welcome to HyperJob Agency!</h2>
+        <br>
+        <div class="form_divs">
+            <form method="post" action="signup">{% csrf_token %}
+              <table>{{ form.as_table }}</table>
+              <button class="form_btn" type="submit">Send</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
