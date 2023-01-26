@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<main>
+    <div style="margin-bottom: 12px;">
+        <a href="/signup/">Sign up</a>
+    </div>
+
+    <div style="margin-bottom: 12px;">
+        <a href="/login/">Login</a>
+    </div>
+
+    <form action="{%  url 'main' %}" method="GET" action="">
+        {% csrf_token %}
+        <input type="search" name="q">
+        <input type="submit" value="Search" />
+    </form>
+
+    <p> {{ courses|length }} courses </p>
+
+    {% for course in courses %}
+        <p>
+            <a href="{% url 'course_details' course.id %}">{{ course.title }}</a>
+        </p>
+    {% endfor %}
+</main>
+
+{% endblock %}

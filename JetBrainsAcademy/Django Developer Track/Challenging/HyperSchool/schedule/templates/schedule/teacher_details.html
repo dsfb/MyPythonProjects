@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<main>
+    <h2>Get acquainted!</h2>
+
+    <h3>Name: {{ teacher.name }}</h3>
+    <h3>Surname: {{ teacher.surname }}</h3>
+    <h3>Age: {{ teacher.age }}</h3>
+
+    <p>Some words about experience: {{ teacher.about }}</p>
+</main>
+
+{% endblock %}
