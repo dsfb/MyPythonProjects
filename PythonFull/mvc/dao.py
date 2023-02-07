@@ -16,6 +16,3 @@ class PessoaDal:
 		cpf = '10234332'
 
 		return Pessoa(nome, idade, cpf)
-
-p1 = Pessoa('Caio', 20, '13241234123')
-print(PessoaDal.ler().nome)
