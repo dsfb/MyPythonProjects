@@ -235,6 +235,7 @@ class HyperJobTest(DjangoTest):
             links = re.findall(self.ELEMENT_PATTERN, page)
             for link in (
                 '/login',
+                '/logout',
                 '/signup',
                 '/vacancies',
                 '/resumes',
@@ -277,6 +278,14 @@ class HyperJobTest(DjangoTest):
             return CheckResult.wrong('Cannot login: problems with form')
         except urllib.error.URLError as err:
             return CheckResult.wrong(f'Cannot login: {err.reason}')
+
+    def check_logout(self) -> CheckResult:
+        opener = urllib.request.build_opener()
+        try:
+            opener.open(f'{self.get_url()}logout')
+            return CheckResult.correct()
+        except urllib.error.URLError:
+            return CheckResult.wrong('Cannot connect to the logout page.')
 
     def check_resumes(self) -> CheckResult:
         try:

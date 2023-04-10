@@ -41,7 +41,7 @@
         <h2 class="h_titles">Create a new Resume:</h2>
         <br>
         <div class="form_divs">
-            <form method="post" action="new">
+            <form method="get" action="new">
                 {% csrf_token %}
               <table>{{ form.as_table }}</table>
               <button class="form_btn" type="submit">Create resume</button>

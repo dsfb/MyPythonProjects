@@ -44,17 +44,21 @@
         <br/>
 
         <div class="form_divs">
-            <form action="resumes/new" method="get">
+            <form action="/resumes/new" method="get">
                 {% csrf_token %}
                 <input type="submit" class="form_submit" value="Create Resume">
             </form>
 
             <br />
 
-            <form action="vacancies/new" method="get">
+            <form action="/vacancies/new" method="get">
                 {% csrf_token %}
                 <input type="submit" class="form_submit" value="Create Vacancy">
             </form>
+        </div>
+
+        <div>
+            <a href="/logout">Logout</a>
         </div>
     </div>
 </body>

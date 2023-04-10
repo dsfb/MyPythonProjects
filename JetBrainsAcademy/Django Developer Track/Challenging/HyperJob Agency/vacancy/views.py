@@ -1,11 +1,10 @@
-from django import http
 from django.core.exceptions import PermissionDenied
+from django.http import HttpResponseForbidden
 from django.shortcuts import render, redirect
 from .forms import VacancyForm
 from .models import Vacancy
 
 
-# Create your views here.
 def vacancy_list(request):
     vacancies = Vacancy.objects.all()
     return render(request, 'vacancy_list.html', {'vacancies': vacancies})
@@ -13,7 +12,9 @@ def vacancy_list(request):
 
 def vacancy_new(request):
     if not request.user.is_authenticated:
-        raise PermissionDenied()
+        return HttpResponseForbidden('<h1>403 Forbidden</h1>', content_type='text/html')
+    if not request.user.is_staff:
+        return HttpResponseForbidden('<h1>403 Forbidden</h1>', content_type='text/html')
 
     if request.method == 'POST':
         post_dict = request.POST
