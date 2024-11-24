@@ -1,3 +1,5 @@
 Banana Prata|5|frutas|Caio|Marcos|3|22/11/2024
 Banana Prata|5|frutas|Caio|Marcos|3|22/11/2024
 Banana Prata|5|frutas|Caio|Marcos|3|22/11/2024
+Laranja|4|frutas|Caio|Lucas|3|23/11/2024
+Abacaxi|3|frutas|Caio|Paulo|5|23/11/2024

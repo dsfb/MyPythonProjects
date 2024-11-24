@@ -5,6 +5,12 @@ class Categoria:
     def __init__(self, categoria):
         self.categoria = categoria
 
+    def __str__(self):
+        return f"Categoria: {self.categoria}"
+
+    def __repr__(self):
+        return self.__str__()
+
 
 class Produtos:
     def __init__(self, nome, preco, categoria):
@@ -26,6 +32,12 @@ class Venda:
         self.comprador = comprador
         self.quantidadeVendida = quantidadeVendida
         self.data = data
+
+    def __str__(self):
+        return f"Venda de: {self.vendedor} em: {self.data}, para: {self.comprador};"
+
+    def __repr__(self):
+        return self.__str__()
 
 
 class Fornecedor:
