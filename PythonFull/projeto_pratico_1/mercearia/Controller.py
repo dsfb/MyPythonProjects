@@ -17,5 +17,24 @@ class ControllerCategoria:
         else:
             print('A categoria que deseja cadastrar já existe!')
 
-a = ControllerCategoria()
-a.cadastrarCategoria('Frios')
+    def removerCategoria(self, categoriaRemover):
+        x = DaoCategoria.ler()
+        cat = list(filter(lambda x: x.categoria == categoriaRemover, x))
+
+        if not cat:
+            print("A categoria que você deseja remover não existe.")
+        else:
+            for i in range(len(x)):
+                if x[i].categoria == categoriaRemover:
+                    del x[i]
+                    break
+
+            print("A categoria foi removida com sucesso!")
+
+            with open('categoria.txt', 'w') as arq:
+                for i in x:
+                    arq.writelines(i.categoria)
+                    arq.writelines('\n')
+
+# a = ControllerCategoria()
+# a.cadastrarCategoria('Frios')
