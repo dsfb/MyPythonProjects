@@ -91,7 +91,7 @@ class DaoVenda(Dao):
 #  "de certa forma".
 
 
-class DaoEstoque:
+class DaoEstoque(Dao):
     filename = 'estoque.txt'
 
     @classmethod
@@ -109,7 +109,7 @@ class DaoEstoque:
             return [Estoque(Produtos(*est[0:3]), *est[3:]) for est in cls.estoques]
 
 
-class DaoFornecedor:
+class DaoFornecedor(Dao):
     filename = 'fornecedores.txt'
 
     @classmethod
@@ -126,7 +126,7 @@ class DaoFornecedor:
         return [Fornecedor(*fornec) for fornec in cls.fornecedores]
 
 
-class DaoPessoa:
+class DaoPessoa(Dao):
     filename = 'clientes.txt'
 
     @classmethod
@@ -142,7 +142,7 @@ class DaoPessoa:
         return [Pessoa(*pes) for pes in cls.clientes]
 
 
-class DaoFuncionario:
+class DaoFuncionario(Dao):
     filename = 'funcionarios.txt'
 
     @classmethod
