@@ -106,7 +106,7 @@ class DaoEstoque(Dao):
         with open(cls.filename, 'r') as arq:
             cls.estoques = super(DaoEstoque, cls).ler(cls.filename)
 
-            return [Estoque(Produtos(*est[0:3]), *est[3:]) for est in cls.estoques]
+            return [Estoque(Produtos(*est[0:3]), int(est[3])) for est in cls.estoques]
 
 
 class DaoFornecedor(Dao):

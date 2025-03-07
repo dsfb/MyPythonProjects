@@ -156,8 +156,121 @@ class ControllerEstoque:
                 )
                 print("--------------------")
 
-a = ControllerEstoque()
+# a = ControllerEstoque()
 # a.cadastrarProduto("banana", "5", "Verduras", 10) # Banana não é uma verdura!
 # a.removerProduto('banana')
 # a.alterarProduto('banana', 'maca', '5', 'Verduras', '20')
-a.mostrarEstoque()
+# a.mostrarEstoque()
+
+
+### Fazendo de modo profissional.
+### Sugestão do professor para o Mundo Corporativo, e dentro de uma
+### equipe profissional de desenvolvimento de software em Python...
+### Boas práticas de programação, com o uso de documentação no projeto...
+# class ControllerVenda:
+#     def cadastrarVenda(self, nomeProduto, vendedor, comprador, quantidadeVendida):
+#         '''
+#         return 1: O produto não existe
+#         return 2: A quantidade a ser vendida não é maior do que a armazenada em estoque
+#         return 3, valorDaCompra: A venda foi efetuada com sucesso
+
+#         :param nomeProduto:
+#         :param vendedor:
+#         :param comprador:
+#         :param quantidadeVendida:
+#         :return:
+#         '''
+#         x = DaoEstoque.ler()
+#         temp = []
+
+#         existe = False # Não tem o produto no estoque.
+#         quantidade = False # Existe o produto no estoque mas não em quantidade suficiente.
+
+#         for i in x:
+#             if not existe:
+#                 if i.produto.nome == nomeProduto:
+#                     existe = True
+#                     if int(i.quantidade) >= quantidadeVendida:
+#                         quantidade = True
+#                         i.quantidade -= int(quantidadeVendida)
+
+#                         vendido = Venda(Produtos(i.produto.nome, i.produto.preco, i.produto.categoria),
+#                                         vendedor, comprador, quantidadeVendida)
+
+#                         valorDaCompra = int(quantidadeVendida) * int(i.produto.preco)
+
+#                         DaoVenda().salvar(vendido)
+
+#             temp.append([Produtos(i.produto.nome, i.produto.preco, i.produto.categoria), i.quantidade])
+
+#         with open('estoque.txt', 'w') as arq:
+#             arq.write('')
+
+#             # [[Produto(), quantidade]]
+#             # quantidade é um inteiro
+#             for i in temp:
+#                 with open('estoque.txt', 'a') as arq:
+#                     arq.writelines(i[0].nome + "|" + i[0].preco + "|" +
+#                         i[0].categoria + "|" + str(i[1]))
+#                     arq.writelines("\n")
+
+#             if not existe:
+#                 # print('Erro: O produto não existe!')
+#                 return 1
+#             elif not quantidade:
+#                 # print("Erro: A quantidade a ser vendida não é maior do que a armazenada em estoque.")
+#                 return 2
+#             else:
+#                 # print("A venda foi realizada com sucesso!")
+#                 return 3, valorDaCompra
+### Fim da Sugestão do professor
+
+
+class ControllerVenda:
+    def cadastrarVenda(self, nomeProduto, vendedor, comprador, quantidadeVendida):
+        x = DaoEstoque.ler()
+        temp = []
+
+        existe = False # Não tem o produto no estoque.
+        quantidade = False # Existe o produto no estoque mas não em quantidade suficiente.
+
+        for i in x:
+            if not existe:
+                if i.produto.nome == nomeProduto:
+                    existe = True
+                    if int(i.quantidade) >= quantidadeVendida:
+                        quantidade = True
+                        i.quantidade -= int(quantidadeVendida)
+
+                        vendido = Venda(Produtos(i.produto.nome, i.produto.preco, i.produto.categoria),
+                                        vendedor, comprador, quantidadeVendida)
+
+                        valorDaCompra = int(quantidadeVendida) * int(i.produto.preco)
+
+                        DaoVenda().salvar(vendido)
+
+            temp.append([Produtos(i.produto.nome, i.produto.preco, i.produto.categoria), i.quantidade])
+
+        with open('estoque.txt', 'w') as arq:
+            arq.write('')
+
+            # [[Produto(), quantidade]]
+            # quantidade é um inteiro
+            for i in temp:
+                with open('estoque.txt', 'a') as arq:
+                    arq.writelines(i[0].nome + "|" + i[0].preco + "|" +
+                        i[0].categoria + "|" + str(i[1]))
+                    arq.writelines("\n")
+
+            # Obs.: as branches 'if' e 'elif' vão retornar 'None' automaticamente!
+            if not existe:
+                print('Erro: O produto não existe!')
+            elif not quantidade:
+                print("Erro: A quantidade a ser vendida não é maior do que a armazenada em estoque.")
+            else:
+                print("A venda foi realizada com sucesso!")
+                return valorDaCompra
+
+
+a = ControllerVenda()
+a.cadastrarVenda('maca', 'joao', 'caio', 2)
