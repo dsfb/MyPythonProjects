@@ -96,6 +96,54 @@ class ControllerEstoque:
         else:
             print("Erro: Categoria inexistente!")
 
+    def removerProduto(self, nome):
+        x = DaoEstoque.ler()
+        est = list(filter(lambda x: x.produto.nome == nome, x))
+
+        if est:
+            for i in range(len(x)):
+                if x[i].produto.nome == nome:
+                    del x[i]
+                    print('O produto foi removido com sucesso!')
+                    break
+        else:
+            print("Erro: o produto que você deseja remover, não existe!")
+
+        with open('estoque.txt', 'w') as arg:
+            for i in x:
+                arq.writelines(i.produto.nome + "|" + i.produto.preco + "|" +
+                    i.produto.categoria + "|" + str(i.quantidade))
+                arq.writelines("\n")
+
+    def alterarProduto(self, nomeParaAlterar, novoNome, novoPreco, novaCategoria, novaQuantidade):
+        x = DaoEstoque.ler()
+        y = DaoCategoria.ler()
+
+        h = list(filter(lambda x: x.categoria == novaCategoria, y))
+        if h:
+            est = list(filter(lambda x: x.produto.nome == nomeParaAlterar, x))
+            if est:
+                est2 = list(filter(lambda x: x.produto.nome == novoNome, x))
+                if not est2:
+                    x = list(map(lambda x: Estoque(Produtos(novoNome, novoPreco, novaCategoria), novaQuantidade)
+                        if (x.produto.nome == nomeParaAlterar) else x, x))
+                    print("O produto foi alterado  com sucesso!")
+                else:
+                    print("Erro: O produto já está cadastrado!")
+            else:
+                print("Erro: O produto que você deseja alterar não existe!")
+
+            with open('estoque.txt', 'w') as arq:
+                for i in x:
+                    arq.writelines(i.produto.nome + "|" + i.produto.preco + "|" +
+                        i.produto.categoria + "|" + str(i.quantidade))
+                    arq.writelines("\n")
+        else:
+            print("Erro: A categoria informada não existe!")
+
+
 
 a = ControllerEstoque()
-a.cadastrarProduto("banana", "5", "Verduras", 10)
+# a.cadastrarProduto("banana", "5", "Verduras", 10) # Banana não é uma verdura!
+# a.removerProduto('banana')
+a.alterarProduto('banana', 'maca', '5', 'Verduras', '20')
